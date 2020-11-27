@@ -13,6 +13,7 @@ gem 'jsonapi-rails', '~> 0.4.0'
 
 gem 'pundit', '~> 2.1.0'
 gem 'rack-cors', '~> 1.1.1'
+gem 'jwt'
 
 
 # Reduces boot times through caching; required in config/boot.rb
