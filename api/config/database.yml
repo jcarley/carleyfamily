@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['CARLEYFAMILY_DATABASE_HOST'] %>
+  port: <%= ENV.fetch("CARLEYFAMILY_DATABASE_PORT") { 5432 } %>
+  username: <%= ENV['CARLEYFAMILY_DATABASE_USERNAME'] %>
+  password: <%= ENV['CARLEYFAMILY_DATABASE_PASSWORD'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: carleyfamily_development
+
+test:
+  <<: *default
+  database: carleyfamily_test
+
+production:
+  <<: *default
+  database: carleyfamily_production
