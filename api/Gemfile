@@ -3,33 +3,33 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
 
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'jsonapi-rails', '~> 0.4.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
-gem 'jsonapi-rails', '~> 0.4.0'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'jwt'
 gem 'pundit', '~> 2.1.0'
 gem 'rack-cors', '~> 1.1.1'
-gem 'jwt'
-
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-byebug'
-  gem 'factory_bot_rails'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'pry-byebug'
 end
 
 group :development do
   gem 'listen', '~> 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # gem 'solargraph', '~> 0.39.17'
@@ -42,4 +42,4 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
