@@ -12,22 +12,26 @@
   @apply border-2 border-black;
 }
 
-.app {
+/* .app {
   @apply w-full;
-}
+} */
 
 .grid-container {
-  grid-template-rows: 80px 1fr 70px;
-  grid-template-columns: 1fr;
+  @apply grid grid-flow-col grid-cols-2 h-screen;
+  grid-template-columns: 20% 1fr;
 }
 
-.content-container-grid {
+/* .content-container-grid {
   @apply grid grid-cols-2 grid-flow-col w-full h-full;
   grid-template-columns: 15% 1fr;
-}
+} */
 
 .nav-item {
   @apply h-10 pl-2 cursor-pointer hover:bg-gray-200 hover:text-blue-800 leading-10;
+}
+
+.active {
+  @apply text-blue-700 bg-blue-200;
 }
 
 .nav-icon {

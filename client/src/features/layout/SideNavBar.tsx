@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { useRouteMatch } from 'react-router-dom';
+import { SideNavItem } from './SideNavItem';
 
 interface SideNavBarProps {}
 
@@ -10,38 +11,11 @@ export const SideNavBar = (props: SideNavBarProps): ReactElement => {
     <nav>
       <div>
         <ul className='p-2'>
-          <li className='nav-item'>
-            <Link to={`${url}/photos`}>
-              <span className='nav-icon'>
-                <i className='far fa-image'></i>
-              </span>
-              <span className='nav-text'>Photos</span>
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to={`${url}/sharing`}>
-              <span className='nav-icon'>
-                <i className='far fa-share-square'></i>
-              </span>
-              <span className='nav-text'>Sharing</span>
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to={`${url}/albums`}>
-              <span className='nav-icon'>
-                <i className='far fa-images'></i>
-              </span>
-              <span className='nav-text'>Albums</span>
-            </Link>
-          </li>
-          <li className='nav-item'>
-            <Link to={`${url}/trash`}>
-              <span className='nav-icon'>
-                <i className='far fa-trash-alt'></i>
-              </span>
-              <span className='nav-text'>Trash</span>
-            </Link>
-          </li>
+          <SideNavItem to={`${url}/photos`} iconName='far fa-image' text='Photos' />
+          <SideNavItem to={`${url}/sharing`} iconName='far fa-share-square' text='Sharing' />
+          <SideNavItem to={`${url}/albums`} iconName='far fa-images' text='Albums' />
+          <SideNavItem to={`${url}/trash`} iconName='far fa-trash-alt' text='Trash' />
+          <SideNavItem to={`${url}/trash`} iconName='fab fa-github' text='Source' className='border-t-2' />
         </ul>
       </div>
     </nav>

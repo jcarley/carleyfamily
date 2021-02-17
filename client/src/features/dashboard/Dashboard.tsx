@@ -10,8 +10,8 @@ export const Dashboard = (): ReactElement => {
   let { url } = useRouteMatch();
 
   return (
-    <div className='debug content-container-grid'>
-      <div className='debug sidenav'>
+    <div className='grid-container'>
+      <div className='sidebar border-r-2 shadow-xl'>
         <SideNavBar />
       </div>
       <div className='content'>
