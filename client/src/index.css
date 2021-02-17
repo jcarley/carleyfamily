@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.debug {
+  @apply border-2 border-black;
+}
+
+.app {
+  @apply w-full;
+}
+
+.grid-container {
+  grid-template-rows: 80px 1fr 70px;
+  grid-template-columns: 1fr;
+}
+
+.content-container-grid {
+  @apply grid grid-cols-2 grid-flow-col w-full h-full;
+  grid-template-columns: 15% 1fr;
+}
+
+.nav-item {
+  @apply h-10 pl-2 cursor-pointer hover:bg-gray-200 hover:text-blue-800 leading-10;
+}
+
+.nav-icon {
+  @apply inline-block w-6 align-middle;
+}
+
+.nav-text {
+  @apply m-2;
+}
