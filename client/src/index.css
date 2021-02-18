@@ -16,18 +16,25 @@
   @apply w-full;
 } */
 
-.grid-container {
-  @apply grid grid-flow-col grid-cols-2 h-screen;
-  grid-template-columns: 20% 1fr;
+.dashboard-grid-container {
+  @apply grid grid-flow-row grid-rows-2 h-screen;
+  grid-template-rows: 80px 1fr;
 }
 
+/* @apply grid grid-flow-col grid-cols-2 h-full; */
+.dashboard-main {
+  @apply h-full;
+  grid-template-columns: 250px 1fr;
+}
+
+/* grid-template-columns: 20% 1fr; */
 /* .content-container-grid {
   @apply grid grid-cols-2 grid-flow-col w-full h-full;
   grid-template-columns: 15% 1fr;
 } */
 
 .nav-item {
-  @apply h-10 pl-2 cursor-pointer hover:bg-gray-200 hover:text-blue-800 leading-10;
+  @apply h-10 pl-2 text-white cursor-pointer hover:bg-gray-200 hover:text-blue-800 leading-10;
 }
 
 .active {
@@ -40,4 +47,40 @@
 
 .nav-text {
   @apply m-2;
+}
+
+.sidebar {
+  @apply h-full;
+  z-index: 1;
+  background: #2f323a;
+  left: 0;
+  width: 250px;
+  position: fixed;
+}
+
+.content {
+  @apply h-full;
+  margin-left: 250px;
+}
+
+#check {
+  display: none;
+}
+
+#check:checked ~ .sidebar {
+  left: -190px;
+}
+
+#check:checked ~ .sidebar .nav-icon {
+  font-size: 20px;
+  margin-left: 170px;
+  width: 100%;
+}
+
+#check:checked ~ .sidebar .nav-text {
+  display: none;
+}
+
+#check:checked ~ .content {
+  margin-left: 60px;
 }
